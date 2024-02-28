@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h3>LIBRARY PORTAL</h3>
+<a href="addstudent">Add student</a>
+<br>
+<a href="addbook">Add Book</a>
+<br>
+<a href="home">Home</a>
+<br>
+<a href="bookentry">Click Here to Book Entry</a>
+<a href="bookreturn">Click here to book return</a>
+<a href="showallbook">Show All Book</a>
+<form action="searchbook">
+<label for="searchbook">Search Here</label>
+<input type="text" id="searchbook" name="s" minlength="3" placeholder="search here">
+<button type="submit">Submit</button>
+</form>
+<h1>Add Book</h1>
+<div>
+<form th:action="@{/savebook}" method="post">
+<label for="name">Enter Book_name</label>
+<input id="name" type="text" name="bookname" minlength="5"><br>
+<label for="rollno">Enter Book_Id</label>
+<input id="book_id" type="text" name="bookid" minlength="5"><br>
+<label for="bookauthor">Enter Book Author Name</label>
+<input id="bookauthor" type="text" name="bookauthor" minlength="5"><br>
+<label for="studentid">Enter student_Id</label>
+<input id="studentid" value="Null" type="text" name="studentid"><br>
+<label for="studentname">Enter student_Name</label>
+<input id="studentname" value="Null" type="text" name="studentname"><br>
+<label for="availability">Availability</label>
+<input id="availability" value="YES" type="text" name="availability" minlength="2" maxlength="3">
+<button type="submit">Submit</button>
+
+</form>
+</div>
+</body>
+</html>

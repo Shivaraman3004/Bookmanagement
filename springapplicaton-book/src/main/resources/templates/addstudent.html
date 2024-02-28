@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h3>LIBRARY PORTAL</h3>
+<a href="addstudent">Add student</a>
+<br>
+<a href="addbook">Add Book</a>
+<br>
+<a href="home">Home</a>
+
+ <br>
+<form action="searchstudent">
+<label for="searchstudent">Search Here</label>
+<input type="text" id="searchstudent" name="s" >
+<button type="submit">Submit</button>
+</form>
+<a href="showallstudent">Show All Student</a>
+<a href="bookentry">Click Here to Book Entry</a>
+<a href="bookreturn">Click here to book return</a>
+<h1>Add Student </h1>
+<div class="container">
+<form  th:action=@{/save} method="post">
+<label for="name">Enter Student_name</label>
+<input id="name" type="text" name="studentname" minlength="5"><br>
+<label for="rollno">Enter Student_RollNo</label>
+<input id="rollno" type="text" name="studentrollno" minlength="7"><br>
+<button type="submit">Submit</button>
+</form>
+</div>
+</body>
+</html>

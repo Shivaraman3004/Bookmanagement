@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>showing Book </h1>
+<table class="table">
+  <thead>
+    <tr >
+      <th scope="col">Book_Name </th>
+      <th scope="col">Book_Id</th>
+      <th scope="col">Student_Id</th>
+      <th scope="col">Student_Name</th>
+       <th scope="col">Book_Author</th>
+      <th scope="col">Book_Availability</th>    
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="bookdetails :${bookdetails}">
+      <td th:text="${bookdetails.bookname}"></td>
+      <td th:text="${bookdetails.bookid}"></td>
+       <td th:text="${bookdetails.bookauthor}"></td>
+      <td th:text="${bookdetails.studentname}"></td>
+      <td th:text="${bookdetails.studentid}"></td>
+      <td th:text="${bookdetails.availability}"></td>
+      </tr>
+     </tbody>
+</table>
+
+</body>
+</html>

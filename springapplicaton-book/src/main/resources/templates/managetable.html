@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>showing Management table</h1>
+<table class="table">
+  <thead>
+    <tr >
+      <th scope="col">Book_Id </th>
+      <th scope="col">Book_Name</th>
+      <th scope="col">Book_status</th>
+      <th scope="col">Student_Id</th>
+      <th scope="col">Student_Name</th>
+      <th scope="col">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="bookentryandreturn :${bookentryandreturn}">
+      <td th:text="${bookentryandreturn. bookid}"></td>
+      <td th:text="${bookentryandreturn.bookname}"></td>
+          <td th:text="${bookentryandreturn.status}"></td>
+           <td th:text="${bookentryandreturn. studentid}"></td>
+            <td th:text="${bookentryandreturn. studentname}"></td>
+             <td th:text="${bookentryandreturn. date}"></td>
+      </tr>
+     </tbody>
+</table>
+</body>
+</html>
