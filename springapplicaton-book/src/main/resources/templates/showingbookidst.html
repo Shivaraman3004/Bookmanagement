@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Library portal</title>
+<link rel="stylesheet" th:href="@{/css/home.css}">
+</head>
+<body>
+<div class="navbar">
+<h1>LIBRARY PORTAL</h1>
+<div class="searchstudent">
+<form action="/libraryportal/searchinfo">
+<input type="text" id="searchbook" name="name"   placeholder="search by bookname" required>
+<button type="submit"><img src="/css/magnifying-glass.png"></button>
+</form>
+</div>
+<ul>
+<li><a href="/libraryportal/home">Home</a></li>
+<li><a href="/libraryportal/addbook">Add Book</a></li>
+<li><a href="/libraryportal/showinfo">Show Info</a></li>
+<li><a href="/libraryportal/login">Admin Login</a></li>
+</ul>
+</div>
+
+
+<div class="msgid">
+<div class="msgid_head">
+<p>The New Book Id: </p> 
+<h4  th:text="${str}" ></h4>
+</div>
+<span>Note:Please write the Book ID in Infront of the page</span></div>
+</body>
+</html>

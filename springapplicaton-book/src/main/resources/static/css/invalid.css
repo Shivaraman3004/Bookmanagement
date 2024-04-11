@@ -1,0 +1,110 @@
+@charset "ISO-8859-1";
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+*{
+	margin:0px;
+	padding:0px;
+	box-sizing:border-box;
+	font-family:Lato;
+}
+.navbar
+{
+	display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+	background-color: #0d68bd;
+	color:#fff;
+}
+.navbar ul{
+  display: flex;
+  justify-content: space-between;
+  gap:20px;
+  padding:0px 2rem;
+}
+.navbar ul li {
+	padding:1rem;
+	border-radius:10px;
+  list-style-type: none;
+   cursor: pointer;
+}
+.navbar ul li a{
+	font-size:24px;
+	font-weight:500;
+  text-decoration: none;
+color:#fff;
+}
+.navbar ul li:hover{
+		background-color: #fff;
+}
+.navbar ul li:hover a{
+	color:#0d68bd;	
+}
+.home_links{
+	display:flex;
+	flex-direction:column;
+	align-items: center;
+	gap:50px;
+	margin:2rem auto;
+}
+.book{
+	display:flex;
+	flex-direction:column;
+	width:20%;
+	gap:30px;
+	align-items:center;
+}
+.book button a{
+	text-decoration:none;
+	font-size:20px;
+	font-weight:500;
+	color:#fff;
+	
+} 
+.book button {
+	height:70px;
+	padding:10px 20px;
+	background-color: #fff;
+	outline:none;
+	 cursor: pointer;
+	border:2px solid #0d68bd;
+	border-radius:10px;
+}
+.book_entry button a{
+	color:#0d68bd;
+}
+.book_entry button:hover{
+	background-color: #0d68bd;
+}
+.book_entry button:hover a{
+	color:#fff;
+}
+.book_return button{
+	border:2px solid #eb1e00;
+	background-color: #fff;
+}
+
+.book_return button a{
+color: #eb1e00;
+}
+
+.book_return button:hover{
+	background-color: #eb1e00;
+}
+.book_return button:hover a{
+	color:#fff;
+}
+.msg
+{
+    
+	display:flex;
+	justify-content:center;
+}
+.msg p{
+	border-radius:10px;
+	background-color: #ff644e;
+	color:#cccccc;
+	padding:10px 25px;
+	font-size:20px;
+}
+
+	

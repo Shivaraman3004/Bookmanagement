@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Library Portal</title> 
+<link rel="stylesheet" th:href="@{/css/home.css}">
+</head>
+<body>
+<div class="navbar">
+<h1>LIBRARY PORTAL</h1>
+<div class="searchstudent">
+<form action="/libraryportal/admin/searchstudent">
+<input type="text" id="searchstudent" name="s" required placeholder="search here"  >
+<button type="submit"><img src="/css/magnifying-glass.png"></button>
+</form>
+</div>
+<ul>
+<li><a href="/libraryportal/admin/home">Home</a></li>
+<li><a href="/libraryportal/admin/addstudent">Add student</a></li>
+<li><a href="/libraryportal/admin/addbook">Add Book</a></li>
+<li><a href="/libraryportal/admin/update">Update</a></li>
+<li><a href="/libraryportal/home">Logout</a></li>
+</ul>
+</div>
+<div class="home_links admin">
+<div class="book_entry book admin_book">
+<a href="/libraryportal/admin/showallbook"><button>Show All Book   </button></a>
+</div>
+<div class="book_entry book admin_book">
+<a href="/libraryportal/admin/showallstudent"><button>Show All Student</button></a>
+</div>
+<div class="book_entry book admin_book">
+<a href="/libraryportal/admin/showallmanagement"><button>Taken</button></a>
+</div>
+<div class="book_return book admin_book">
+<a href="/libraryportal/admin/Pending"><button>Pending</button></a>
+</div>
+<div class="book_return book admin_book">
+<a href="/libraryportal/admin/return"><button>Return Book</button></a>
+</div>
+
+</div>
+
+</body>
+</html>

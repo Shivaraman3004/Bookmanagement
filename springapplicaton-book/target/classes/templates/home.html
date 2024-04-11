@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Library Portal</title>
+<link rel="stylesheet" th:href="@{/css/home.css}">
+</head>
+<body>
+<div class="navbar">
+<h1>LIBRARY PORTAL</h1>
+<div class="searchstudent">
+<form action="/libraryportal/searchinfo">
+<input type="text" id="searchbook" name="name"   placeholder="search by bookname" required>
+<button type="submit"><img src="/css/magnifying-glass.png"></button>
+</form>
+</div>
+<ul>
+<li><a href="/libraryportal/home">Home</a></li>
+<li><a href="/libraryportal/addbook">Add Book</a></li>
+<li><a href="/libraryportal/showinfo">Show Info</a></li>
+<li><a href="/libraryportal/login">Admin Login</a></li>
+</ul>
+</div>
+<div class="home_links">
+<div class="book_entry book">
+<a href="/libraryportal/bookentry"><button>Click Here to Book Entry</button></a></div>
+<!--  <div class="book_return book">
+<a href="/libraryportal/bookreturn"><button>Click here to book return</button></a></div>
+</div> --> 
+
+</div>
+</body>
+</html>

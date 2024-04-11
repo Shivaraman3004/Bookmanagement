@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Library Portal</title>
+<link rel="stylesheet" th:href="@{/css/home.css}">
+</head>
+<body>
+<div class="navbar">
+<h1>LIBRARY PORTAL</h1>
+<div class="searchstudent">
+<form action="/libraryportal/searchinfo">
+<input type="text" id="searchbook" name="name"   placeholder="search by bookname" required>
+<button type="submit"><img src="/css/magnifying-glass.png"></button>
+</form>
+</div>
+<ul>
+<li><a href="/libraryportal/home">Home</a></li>
+<li><a href="/libraryportal/addbook">Add Book</a></li>
+<li><a href="/libraryportal/showinfo">Show Info</a></li>
+<li><a href="/libraryportal/login">Admin Login</a></li>
+</ul>
+</div>
+<!-- <div>
+<h1>Name:</h1><h1 th:text="${studentdetails.studentname}"></h1>     
+<h1 th:text="${studentdetails.studentrollno}"></h1>
+</div> -->
+<div class="students_details">
+<div class="Name">
+	<h2>Student Name: </h2>
+    <h3 th:text="${studentdetails.studentname}"> </h3>
+</div>
+<div class="Name">
+    <h2>Student RollNo: </h2>
+    <h3 th:text="${studentdetails.studentrollno}"></h3>
+</div>
+</div>
+<div class="book_return book">
+<a href="/libraryportal/updates"><button>Change Password</button></a></div>
+ <div th:if="${bookentryandreturn != null and bookentryandreturn.size() > 0}">
+    <div class="table">
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Book_Id</th>
+                    <th scope="col">Book_Name</th>
+                    <th scope="col">Book_status</th>
+                    <th scope="col">Taken Date</th>
+                    <th scope="col">Returned Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="bookentryandreturn: ${bookentryandreturn}">
+                    <td th:text="${bookentryandreturn.bookid}"></td>
+                    <td th:text="${bookentryandreturn.bookname}"></td>
+                    <td th:text="${bookentryandreturn.status}"></td>
+                    <td th:text="${bookentryandreturn.takendate}"></td>
+                    <td th:text="${bookentryandreturn.returndate}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+ <div class="msg">
+<div th:else>
+    <p th:text="${message}"></p>
+</div>
+</div>
+
+</body>  
+</html>

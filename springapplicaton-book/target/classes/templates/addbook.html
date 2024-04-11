@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Library Portal</title>
+<link rel="stylesheet" th:href="@{/css/home.css}">
+</head>
+<body>
+
+<div class="navbar">
+<h1>LIBRARY PORTAL</h1>
+<div class="searchstudent">
+<form action="/libraryportal/admin/searchbook">
+<input type="text" id="searchbook" name="s"  minlength="3" placeholder="search here" required>
+<button type="submit"><img src="/css/magnifying-glass.png"></button>
+</form>
+</div>
+<ul>
+<li><a href="/libraryportal/admin/home">Home</a></li>
+<li><a href="/libraryportal/admin/addstudent">Add student</a></li>
+<li><a href="/libraryportal/admin/addbook">Add Book</a></li>
+<li><a href="/libraryportal/home">Logout</a></li>
+<li onclick="displayOptions()"><a>Additional Options</a></li>
+<div class="addstudent_opt fade-in-top">
+<ul>
+<li><a href="/libraryportal/admin/showallbook">Show All Book</a></li>
+<li><a href="/libraryportal/admin/update">Update</a></li>
+</ul>
+</div>
+</ul>
+</div>
+
+
+<div class="addStudent">
+<div class="forms">
+<h1>Add Book</h1>
+<div class="container">
+<form action="/libraryportal/admin/savebook">
+<div class="inputs">
+<input id="name" type="text" name="bookname" required  placeholder="Book Name">
+</div>
+<div class="inputs">
+<input id="book_id" type="text" name="bookid"  required placeholder="Book ID"> 
+ </div>
+ 
+<div class="inputs">
+<input id="bookauthor" type="text" name="bookauthor"  required placeholder="Book Author Name"> 
+ </div>
+ 
+<div class="inputs">
+<input id="studentid" value="Null" type="text" name="studentid" placeholder="Student ID"> 
+ </div>
+ <div class="inputs">
+<input id="studentname" value="Null" type="text" name="studentname" placeholder="Student Name"> 
+ </div>
+ <div class="inputs">
+<input id="availability" value="YES" type="text" name="availability" placeholder="Availability" minlength="2" maxlength="3">
+ </div>
+ <div class="btns_form">
+ <button type="submit">Submit</button>
+ </div>
+
+</form>
+</div>
+</div>
+</div>
+
+
+
+</body>
+<script>
+function displayOptions() {
+    let displays = document.getElementsByClassName("addstudent_opt");
+    let display = displays[0];
+    display.classList.toggle("visible"); // Assuming "visible" is the class name to toggle
+}
+
+</script>
+</html>

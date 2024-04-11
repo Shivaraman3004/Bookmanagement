@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Library Portal</title>
+<link rel="stylesheet" th:href="@{/css/home.css}">
+</head>
+<body>
+<div class="navbar">
+<h1>LIBRARY PORTAL</h1>
+<div class="searchstudent">
+<form action="/libraryportal/admin/searchstudent">
+<input type="text" id="searchstudent" name="s" required placeholder="search here" >
+<button type="submit"><img src="/css/magnifying-glass.png"></button>
+</form>
+</div>
+<ul>
+<li><a href="/libraryportal/admin/home">Home</a></li>
+<li><a href="/libraryportal/admin/addstudent">Add student</a></li>
+<li><a href="/libraryportal/admin/addbook">Add Book</a></li>
+<li><a href="/libraryportal/home">Logout</a></li>
+<li onclick="displayOptions()"><a>Additional Options</a></li>
+<div class="addstudent_opt fade-in-top">
+<ul>
+<li><a href="/libraryportal/admin/showallstudent">Show All Student</a></li>
+<li><a href="/libraryportal/admin/update">Update</a></li>
+</ul>
+</div>
+</ul>
+</div>
+
+
+
+<div class="addStudent">
+<div class="forms">
+<h1>Add Student </h1>
+<div class="container">
+<form  th:action=@{/libraryportal/admin/save} method="post">
+<div class="inputs">
+<!-- <label for="name">Student Name</label> -->
+<input id="name" type="text" name="studentname" required placeholder="Student Name"></div>
+<div class="inputs">
+<!-- <label for="rollno">Student RollNo</label>
+ --><input id="rollno" type="text" name="studentrollno" minlength="5" required placeholder="Student RollNo"></div>
+<div class="inputs"><input id="password" type="text" name="password" required  placeholder="Student Password"></div>
+ <div class="btns_form">
+ <button type="submit">Submit</button>
+ </div>
+
+</form>
+</div>
+</div>
+</div>
+
+
+<script>
+function displayOptions() {
+    let displays = document.getElementsByClassName("addstudent_opt");
+    let display = displays[0];
+    display.classList.toggle("visible"); // Assuming "visible" is the class name to toggle
+}
+
+</script>
+</body>
+</html>

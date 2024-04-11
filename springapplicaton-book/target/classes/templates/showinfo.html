@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Library Portal</title>
+<link rel="stylesheet" th:href="@{/css/home.css}">
+</head>
+<body>
+<div class="navbar">
+<h1>LIBRARY PORTAL</h1>
+<div class="searchstudent">
+<form action="/libraryportal/searchinfo">
+<input type="text" id="searchbook" name="name"   placeholder="search by bookname" required>
+<button type="submit"><img src="/css/magnifying-glass.png"></button>
+</form>
+</div>
+<ul>
+<li><a href="/libraryportal/home">Home</a></li>
+<li><a href="/libraryportal/addbook">Add Book</a></li>
+<li><a href="/libraryportal/showinfo">Show Info</a></li>
+<li><a href="/libraryportal/login">Admin Login</a></li>
+</ul>
+</div>
+<div class="addStudent">
+<div class="forms">
+<div class="container">
+<form  action="/libraryportal/info">
+<div class="inputs">
+<!-- <label for="name">Student Name</label> -->
+<input id="id" type="text" name="id" REQUIRED placeholder="Enter Rollno" minlength="5"></div>
+<div class="inputs">
+<!-- <label for="rollno">Student RollNo</label>
+ --><input id="password" type="password" name="password" REQUIRED minlength="5" placeholder="Enter Password"></div>
+ <div class="btns_form">
+ <button type="submit">Submit</button>
+ </div>
+ </form>
+ </div>
+ </div>
+ </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Library Portal</title>
+<link rel="stylesheet" th:href="@{/css/home.css}">
+</head>
+<body>
+<div class="navbar">
+<h1>LIBRARY PORTAL</h1>
+<div class="searchstudent">
+<form action="/libraryportal/searchinfo">
+<input type="text" id="searchbook" name="name"   placeholder="search by bookname" required>
+<button type="submit"><img src="/css/magnifying-glass.png"></button>
+</form>
+</div>
+<ul>
+<li><a href="/libraryportal/home">Home</a></li>
+<li><a href="/libraryportal/addbook">Add Book</a></li>
+<li><a href="/libraryportal/login">Admin Login</a></li>
+</ul>
+</div>
+<div class="addStudent">
+<div class="forms">
+<h1>Update Student </h1>
+<div class="container">
+<form  th:action=@{/libraryportal/updatest} method="post">
+<div class="inputs">
+<input id="rollno" type="text" name="studentrollno" minlength="5" required placeholder="Student RollNo"></div>
+<div class="inputs"><input id="password" type="text" name="expassword" required  placeholder="Existing Password"></div>
+<div class="inputs"><input id="password" type="text" name="npassword" required  placeholder="New Password"></div>
+<div class="inputs"><input id="password" type="text" name="cpassword" required  placeholder="Confirm Password"></div>
+ <div class="btns_form">
+ <button type="submit">Submit</button>
+ </div>
+</form>
+</div>
+</div>
+</div>
+</body>
+</html>

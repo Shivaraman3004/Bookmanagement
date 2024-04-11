@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Library Portal</title>
+<link rel="stylesheet" th:href="@{/css/home.css}">
+</head>
+<body>
+<div class="navbar">
+<h1>LIBRARY PORTAL</h1>
+<div class="searchstudent">
+<form action="/libraryportal/admin/searchstudent">
+<input type="text" id="searchstudent" name="s" required placeholder="search here"  >
+<button type="submit"><img src="/css/magnifying-glass.png"></button>
+</form>
+</div>
+<ul>
+<li><a href="/libraryportal/admin/home">Home</a></li>
+<li><a href="/libraryportal/admin/addstudent">Add student</a></li>
+<li><a href="/libraryportal/admin/addbook">Add Book</a></li>
+<li><a href="/libraryportal/admin/update">Update</a></li>
+<li><a href="/libraryportal/home">Logout</a></li>
+</ul>
+</div>
+<div th:if="${bookentryandreturn != null and bookentryandreturn.size() > 0}">
+<div class="table">
+<table >
+  <thead>
+    <tr >
+      <th scope="col">Book_Id </th>
+      <th scope="col">Book_Name</th>
+      <th scope="col">Book_status</th>
+      <th scope="col">Student_Id</th>
+      <th scope="col">Student_Name</th>
+      <th scope="col">Taken_Date</th>
+        <th scope="col">Return_Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="bookentryandreturn :${bookentryandreturn}">
+      <td th:text="${bookentryandreturn.bookid}"></td>
+      <td th:text="${bookentryandreturn.bookname}"></td>
+          <td th:text="${bookentryandreturn.status}"></td>
+           <td th:text="${bookentryandreturn.studentid}"></td>
+            <td th:text="${bookentryandreturn.studentname}"></td>
+             <td th:text="${bookentryandreturn.takendate}"></td>
+             <td th:text="${bookentryandreturn.returndate}"></td>
+      </tr>
+     </tbody>
+</table>
+</div>
+</div>
+<div class="msg">
+<div th:else>
+    <p th:text="${msg}"></p>
+</div>
+</div>
+</body>
+</html>
