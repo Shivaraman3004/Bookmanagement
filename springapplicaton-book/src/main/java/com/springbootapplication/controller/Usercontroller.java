@@ -78,15 +78,7 @@ public class Usercontroller {
 	   return "showingbookidst";
 	}
 
-	/*
-	 * @GetMapping("/admin/bookid") public String bookid(Model model) {
-	 * List<Bookdetails> list=new ArrayList<>(); list=bdao.findAll(); ModelAndView
-	 * mav=new ModelAndView(); String st=null; for(Bookdetails s:list) {
-	 * if(s.getBookid().startsWith("LP")) { st=s.getBookid(); } } String
-	 * str=st.substring(2,st.length()); int i=Integer.parseInt(str); i++; String
-	 * res="LP0"+i; mav.addObject("str",res); model.addAttribute("str",res) return
-	 * "showbookid"; }
-	 */
+	
 	@GetMapping("/admin/addstudent")
 	public String  addstudent()
 	{
@@ -386,51 +378,7 @@ public class Usercontroller {
 		return "bookreturnst.html";
 	}
 	
-	/*
-	 * @Transactional
-	 * 
-	 * @GetMapping("/adminentry") public ModelAndView entry(String bookid,String
-	 * studentid,String password) { Bookentryandreturn entry=new
-	 * Bookentryandreturn(); ModelAndView mav=new ModelAndView(); String s=new
-	 * SimpleDateFormat("yyyy-MM-dd").format(new Date()); entry.setDate(s); String
-	 * studentname=""; String bookname=""; String bookid1=bookid.toUpperCase();
-	 * String studentid1=studentid.toUpperCase(); String
-	 * pass1=password.toUpperCase(); Bookdetails
-	 * books=bdao.findById(bookid1).orElse(new Bookdetails());
-	 * bookname=books.getBookname(); Studentdetails
-	 * student=sdao.findById(studentid1).orElse(new Studentdetails());
-	 * studentname=(student.getStudentname()!=null)?student.getStudentname():"";
-	 * String available=(books.getAvailability()!=null)?books.getAvailability():"";
-	 * int count=student.getBookcount(); String status="BORROWED";
-	 * if(available.equals("YES")&&!studentname.equals("")&&student.getPassword().
-	 * equals(pass1)) { entry.setBookid(bookid1); entry.setStudentid(studentid1);
-	 * entry.setStudentname(studentname); entry.setBookname(bookname);
-	 * sdao.updatecount(studentid, (++count)); bdao.updatestudentname(bookid,
-	 * studentname); bdao.updatestudetid(bookid, studentid1);
-	 * bdao.updateavailable(bookid, "NO"); entry.setStatus(status);
-	 * erdao.save(entry); String message="Book Registered Successfully.";
-	 * mav.setViewName("invalid"); mav.addObject("message", message); return mav; }
-	 * else if(student.getPassword()!=pass1) { String
-	 * message="Password is Incorrect"; mav.setViewName("invalid");
-	 * mav.addObject("message", message); return mav; } else
-	 * if(available.equals("")) { String message="please check Book rollno";
-	 * mav.setViewName("invalid"); mav.addObject("message", message); return mav; }
-	 * else if(studentname.equals("")) {
-	 * 
-	 * String message="Invaild in Student rollno"; mav.setViewName("invalid");
-	 * mav.addObject("message",message); return mav; }
-	 * 
-	 * else { if(available.equals("NO")) { String
-	 * message="The Book is Already Taken"; mav.setViewName("invalid");
-	 * mav.addObject("message", message); return mav; } else { String
-	 * message="please check Both rollno"; mav.setViewName("invalid");
-	 * mav.addObject("message", message); return mav;
-	 * 
-	 * } }
-	 * 
-	 * 
-	 * }
-	 */
+	
 	@Transactional
 	@GetMapping("/entry")
 	public String entryst(String bookid,String studentid,String password,Model model)
@@ -510,35 +458,7 @@ public class Usercontroller {
 	}
 		
 	
-	/*
-	 * @Transactional
-	 * 
-	 * @GetMapping("/returnbook") public ModelAndView returnbook(String
-	 * bookid,String password) { Bookentryandreturn entry=new Bookentryandreturn();
-	 * ModelAndView mav=new ModelAndView(); String s=new
-	 * SimpleDateFormat("yyyy-MM-dd").format(new Date()); entry.setDate(s); String
-	 * bookid1=bookid.toUpperCase(); String pass1=password.toUpperCase();
-	 * Bookentryandreturn books=erdao.findById(bookid1).orElse(new
-	 * Bookentryandreturn()); String
-	 * status=(books.getStatus()!=null)?books.getStatus():""; String
-	 * studentidret=(books.getStudentid()!=null)?books.getStudentid():"";
-	 * Studentdetails student=sdao.findById(studentidret).orElse(new
-	 * Studentdetails()); String
-	 * pass=(student.getPassword()!=null)?student.getPassword():"";
-	 * if(status.equals("BORROWED")&&pass.equals(pass1)) { entry.setBookid(bookid1);
-	 * entry.setStatus("RETURNED"); String bookname=books.getBookname();
-	 * entry.setBookname(bookname); entry.setStudentid(studentidret); String
-	 * studentnameret=books.getStudentname(); entry.setStudentname(studentnameret);
-	 * erdao.save(entry); bdao.updateavailable(bookid, "YES");
-	 * bdao.updatestudentname(bookid, "Null"); bdao.updatestudetid(bookid, "Null");
-	 * int count=student.getBookcount(); sdao.updatecount(studentidret, (--count));
-	 * mav.setViewName("bookreturn"); return mav; } else if(!pass.equals(pass1)) {
-	 * mav.setViewName("invalid"); String message="Password is Incorrect.";
-	 * mav.addObject("message", message); return mav; } else {
-	 * mav.setViewName("invalid"); String
-	 * message="Invalid please check Book number."; mav.addObject("message",
-	 * message); return mav; } }
-	 */
+	
 	@Transactional
 	@GetMapping("/admin/returnbook")
 	public String returnbookst(String bookid,String password,Model model)
@@ -630,53 +550,7 @@ public class Usercontroller {
 	{
 		return "update";
 	}
-//	@GetMapping("/admin/searchbookmanagement")
-//	public String searchbookmanagement(@RequestParam String s,Model model)
-//	{
-//		String str=s.toUpperCase();
-//		int i=2,j=0;
-//		ArrayList<Bookentryandreturn> bookdetails=new ArrayList<>();
-//		if(str.length()>2)
-//		{
-//			if(Character.isDigit(str.charAt(i)))
-//			{
-//			List<Bookentryandreturn> list=erdao.findAll();
-//			for(Bookentryandreturn st:list)
-//			{
-//				String stname=st.getBookid();
-//				if(stname.indexOf(str)!=-1)
-//				{
-//					bookdetails.add(st);
-//				}
-//			}
-//		}}
-//		else if(Character.isDigit(str.charAt(j))&&!Character.isDigit(str.charAt(i))){
-//			List<Bookentryandreturn> list=erdao.findAll();
-//			for(Bookentryandreturn st:list)
-//			{
-//				String stname=st.getStudentid();
-//				if(stname.indexOf(str)!=-1)
-//				{
-//					bookdetails.add(st);
-//				}
-//			}
-//			
-//		}
-//		else
-//		{
-//			List<Bookentryandreturn> list=erdao.findAll();
-//			for(Bookentryandreturn st:list)
-//			{
-//				String stname=st.getBookname();
-//				if(stname.indexOf(str)!=-1)
-//				{
-//					bookdetails.add(st);
-//				}
-//			}
-//		}
-//		model.addAttribute("bookentryandreturn",bookdetails);
-//		return "managementtable";
-//	}
+
 	@GetMapping("/admin/updatestudent")
 	public String updatestudent(Studentdetails s,Model model)
 	{
